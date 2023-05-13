@@ -5,7 +5,7 @@ import bcrypt from "bcrypt";
 import mongoose from "mongoose";
 import dotenv from "dotenv";
 import cors from "cors";
-import { UserController } from "./controllers";
+import { UserController } from "./controllers/index.js";
 
 dotenv.config();
 
@@ -21,6 +21,8 @@ const app = express();
 
 app.use(express.json());
 app.use(cors());
+
+app.post('/reqister', UserController.register)
 
 
 app.listen(process.env.PORT || 4444, (err) => {

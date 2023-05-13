@@ -3,7 +3,6 @@ import bcrypt from "bcrypt";
 import UserModel from "../models/User.js";
 
 export const register = async (req, res) => {
-    console.log(req.body);
     try {
         const password = req.body.password;
         const salt = await bcrypt.genSalt(10);
@@ -11,8 +10,8 @@ export const register = async (req, res) => {
 
         const doc = new UserModel({
             email: req.body.email,
-            fullName: req.body.fullName,
-            avatarUrl: req.body.avatarUrl,
+            firstName: req.body.firstName,
+            lastName: req.body.lastName,
             passwordHash: hash,
         });
 
