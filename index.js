@@ -5,6 +5,7 @@ import bcrypt from "bcrypt";
 import mongoose from "mongoose";
 import dotenv from "dotenv";
 import cors from "cors";
+import { UserController } from "./controllers";
 
 dotenv.config();
 
