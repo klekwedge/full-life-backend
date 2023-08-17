@@ -22,7 +22,7 @@ const app = express();
 app.use(express.json());
 app.use(cors());
 
-app.post('/reqister', UserController.register)
+app.post('/auth/reqister', UserController.register)
 
 
 app.listen(process.env.PORT || 4444, (err) => {
